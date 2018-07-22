@@ -1,0 +1,13 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /view/.*
+  script: view_handler.app
+- url: /_ah/mail/doc@.*
+  script: mail_handler.app
+  login: admin
+
+inbound_services:
+- mail
